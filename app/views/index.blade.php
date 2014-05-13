@@ -1,0 +1,2 @@
+@extends('master')
+@yield('header')
