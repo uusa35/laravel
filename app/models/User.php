@@ -18,6 +18,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         'password' => 'required|min:2',
         'repassword' => 'required|same:password'
     );
+    public static  $loginrules = array(
+        'email'=>'required|min:5',
+        'password' => 'required|min:2',
+    );
 
 	/**
 	 * The attributes excluded from the model's JSON form.

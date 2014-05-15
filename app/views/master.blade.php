@@ -20,7 +20,7 @@
     <div class="container">
         @include('layouts.nav')
         @if(Session::has('message'))
-        <div class="alert alert-sucess">
+        <div class="alert alert-success">
             {{ Session::get('message') }}
         </div>
         @endif

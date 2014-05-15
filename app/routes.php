@@ -19,9 +19,9 @@ Route::group(
 	|--------------------------------------------------------------------------
 	|*/
     // Account create ==== Registeration Form
-    Route::get('account/create',array(
-        'as'=>'account-create',
-        'uses'=> 'AccountController@getCreate'
+    Route::get('account/register',array(
+        'as'=>'account-register',
+        'uses'=> 'AccountController@getRegister'
     ));
 
     // Activation Account
@@ -48,9 +48,9 @@ Route::group(
 
 
     // Account Create ==== Registeration Form
-    Route::post('account/create',array(
-        'as'=>'account-create',
-        'uses'=> 'AccountController@postCreate'
+    Route::post('account/register',array(
+        'as'=>'account-register',
+        'uses'=> 'AccountController@postRegister'
     ));
 
     // Account login ==== Login Form

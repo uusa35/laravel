@@ -16,7 +16,7 @@
             <li><a href="{{ URL::to('contactus') }}"><i class="icon-home icon-white"></i> contact us </a></li>
             @else
             <li><a href="#"><i class="icon-home icon-white"></i> Products </a></li>
-            <li><a href="{{ URL::route('account-create') }}"><i class="icon-home icon-white"></i> Register</a></li>
+            <li><a href="{{ URL::route('account-register') }}"><i class="icon-home icon-white"></i> Register</a></li>
             <li ><a href="{{ URL::route('account-login') }}"><i class="icon-file icon-white"></i> Login </a></li>
             @endif
             <li class="dropdown">
