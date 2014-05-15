@@ -32,7 +32,7 @@ class AccountController extends BaseController {
             if($user) {
                 // ENABLE EMAIL FUNCTIONALITY + ACTIVATION CODE
                 /*Mail::send('emails.email', array('name'=> Input::get('username'), 'link'=> URL::route('account-activate', $code)), function ($message) use ($user) {
-                $message->to($user->email, $user->username)->subject('Subject');
+                $message->to($user->email, $user->usgername)->subject('Subject');
                 });*/
                 return Redirect::to('/')->with('message','Thanks for registeration');
             }
