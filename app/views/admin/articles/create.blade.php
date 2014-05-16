@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 @section('content')
 <div class="col-lg-5">
 
@@ -9,10 +9,14 @@
     </ul>
     @endif
 
-    {{ Form::open(array('route'=> 'articles.store', 'role'=>'form')) }}
+    {{ Form::open(array('route'=> 'admin.articles.store', 'role'=>'form')) }}
     <div class="form-group">
     {{ Form::label('author')}}
     {{ Form::text('author', 'Usama Ahmed', array('class'=> 'form-control'))}}
+    </div>
+    <div class="form-group">
+        {{ Form::label('category', 'Category')}}
+        {{ Form::select('category', CategoryArticle::all() , array('class'=> 'form-control'))}}
     </div>
     <div class="form-group">
     {{ Form::label('title')}}
@@ -25,7 +29,7 @@
     <div class="form-group">
     {{ Form::submit('Create', array('class'=>'btn btn-success'))}}
     {{ Form::close() }}
-    {{ link_to_route('articles.index', 'Cancel' ,'',array('class'=>'btn btn-danger'))}}
+    {{ link_to_route('admin.articles.index', 'Cancel' ,'',array('class'=>'btn btn-danger'))}}
     </div>
 </div>
 @stop

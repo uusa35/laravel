@@ -6,7 +6,7 @@
  * Time: 8:59 AM
  */
 
-class Category extends Eloquent {
+class CategoryProduct extends Eloquent {
     protected $fillable = array('name');
     protected $table = 'categories';
    // protected $guarded = array('name','id', 'created_at', 'updated_at');

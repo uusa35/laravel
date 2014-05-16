@@ -10,9 +10,11 @@
         "intervention/image": "1.5.1",
         "intervention/imagecache": "dev-master"
 
+
 	},
     "require-dev": {
-        "way/generators": "2.*"
+        "way/generators": "2.*",
+        "fzaninotto/faker": "1.4.*@dev"
     },
 	"autoload": {
 		"classmap": [

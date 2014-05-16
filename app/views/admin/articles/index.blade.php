@@ -1,9 +1,8 @@
-@extends('master')
+@extends('admin.master')
 @section('content')
-
 <div class="row">
     <div class="col-md-12">
-        {{ URL::to('articles/create', 'Create New Article', '', array('class'=>'btn btn-primary')) }}
+        {{ link_to_action('ArticleController@create', 'Create' ,'', ['class'=>'btn btn-primary']) }}
         <hr>
         @if($articles->count())
         <div class="panel panel-default">
@@ -24,9 +23,9 @@
                     @foreach ($articles as $article)
                     <tr>
                         <td>{{ $article->id }}</td>
-                        <td>{{ $article->author }}</td>
-                        <td>{{ URL::to('articles/edit', 'Edit', [$article->id], ['class' =>'btn btn-primary']) }}</td>
-                        <td>{{  Form::open(['action'=> 'articles/destroy/', $article->id], 'method'=>'DELETE'))}}
+                        <td>{{ link_to_route('admin.articles.show', $article->title , $article->id) }}</td>
+                        <td>{{ link_to_route('admin.articles.edit', 'Edit', [$article->id], ['class' =>'btn btn-primary']) }}</td>
+                        <td>{{  Form::open(['action'=> 'ArticleController@destroy', $article->id], ['method'=>'POST']) }}
                             {{ Form::submit('Delete', array('class'=>'btn btn-danger')) }}
                             {{ Form::close() }}
                         </td>
@@ -42,10 +41,9 @@
         @else
 
         <div class="alert alert-danger alert-dismissable">
-            there is no articles
+           !!!!!!
         </div>
         @endif
     </div>
-
 </div>
 @endsection

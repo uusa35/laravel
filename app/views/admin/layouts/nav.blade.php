@@ -10,25 +10,20 @@
     <div class="navbar-collapse collapse navbar-responsive-collapse">
 
         <ul class="nav navbar-nav">
-            @if(Auth::check())
+            @if(Auth::user()->admin == 1)
             <li><a href="#"><i class="icon-home icon-white"></i> reset password</a></li>
-            @if(Auth::user()->admin == 1) {
             <li ><a href="{{ URL::to('admin/categories') }}"><i class="icon-file icon-white"></i> Categories </a></li>
             <li ><a href="{{ URL::to('admin/products/index') }}"><i class="icon-file icon-white"></i> Products </a></li>
+            <li ><a href="{{ URL::route('admin.articles.index') }}"><i class="icon-file icon-white"></i> Articles </a></li>
             <li ><a href="{{ URL::to('admin/products/create') }}"><i class="icon-file icon-white"></i> Create Products </a></li>
-            }
-            @endif
             @endif
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Dropdown header</li>
                     <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
                 </ul>
             </li>
         </ul>

@@ -1,6 +1,5 @@
-@extends('master')
+@extends('admin.master')
 @section('content')
-
     @if(isset($article))
     <div class="panel panel-primary">
         <div class="panel-heading">{{ $article->title }}</div>

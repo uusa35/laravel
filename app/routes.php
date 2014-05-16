@@ -91,6 +91,7 @@ Route::group(array('before'=>'admin'),function () {
     Route::group(array('prefix'=>'admin'), function () {
         Route::controller('categories', 'CategoryController');
         Route::controller('products', 'ProductController');
+        Route::resource('articles', 'ArticleController');
         Route::get('/', 'HomeController@admin');
     });
 });

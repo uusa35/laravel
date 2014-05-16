@@ -16,7 +16,7 @@ class ProductController extends BaseController {
 
     // show the products in a table - just for admin
     public function getIndex() {
-        $products = Product::all();
+        $products = Product::paginate(15);
         // this will include index and getCreate method == create a product
         return View::make('admin.products.index', compact('products', $products));
     }

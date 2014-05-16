@@ -40,5 +40,8 @@
                 @endif
         </tbody>
     </table>
+    <ul class="pagination">
+    {{ $users->links() }}
+    </ul>
 </div>
 @stop
