@@ -1,11 +1,16 @@
 
-	@font-face
-	{
-		font-family: Sultan Medium;
-		src: url('Sultan Medium.tif');
-	}
-	html,body,h1,h2,h3,h4,a,div,span {
-		font-family: 'Sultan Medium' !important;
+@font-face {
+    font-family:"jarida";
+    src: url("../fonts/jarida.eot");
+}
+@font-face {
+    font-family:"jarida";
+    src: url("../fonts/jarida.ttf");
+}
+
+
+html,body,h1,h2,h3,h4,a,div,span {
+    font-family: 'Oswald', 'jarida' !important;
 	}
 	.panel-default {
 		color: #FFF;
@@ -49,6 +54,6 @@
 
 	   border-color: none !important;
 	   }
-	   .navbar-nav>li {
-		   background-color: red;
-		   }
+    .navbar-nav>li {
+       background-color: #000099;
+    }

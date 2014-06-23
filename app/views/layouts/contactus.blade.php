@@ -1,4 +1,5 @@
 @extends('master')
 @section('content')
-contactus
+عنوان الشركة عنوان الشركة
+رقم الشركة رقم الشركة
 @stop

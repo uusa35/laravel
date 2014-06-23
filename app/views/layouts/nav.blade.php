@@ -5,7 +5,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ URL::to('/') }}" name="top">{{ (Auth::check()) ? 'Dashboard' : 'Main Page' }}</a>
+        <a class="navbar-brand" href="{{ URL::to('/') }}" name="top">{{ (Auth::check()) ? trans::get('nav.dashboard') : trans::get('nav.mainpage') }}</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
 
@@ -20,10 +20,10 @@
             <li ><a href="{{ URL::route('account-login') }}"><i class="icon-file icon-white"></i> Login </a></li>
             @endif
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Arabic</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Dropdown header</li>
@@ -32,8 +32,15 @@
                 </ul>
             </li>
         </ul>
-        <form class="navbar-form navbar-left">
-            <input class="form-control col-lg-8" placeholder="Search" type="text">
+        <form class="navbar-form navbar-left" action="{{ action('LanguageController@chooser') }}" method="post">
+<!--            <input class="form-control col-lg-8" placeholder="Search" type="text">-->
+            <div class="form-group">
+                <select name="locale">
+                    <option value="en">English</option>
+                    <option value="ar">Arabic</option>
+                </select>
+            </div>
+            <input type="submit"/>
         </form>
         @if(Auth::check())
         <ul class="nav navbar-nav navbar-right">
