@@ -5,7 +5,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ URL::to('/') }}" name="top">{{ (Auth::check()) ? trans::get('nav.dashboard') : trans::get('nav.mainpage') }}</a>
+        <a class="navbar-brand" href="{{ URL::to('/') }}" name="top">{{ (Auth::check()) ? Lang::get('nav.dashboard') : Lang::get('nav.mainpage') }}</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
 
