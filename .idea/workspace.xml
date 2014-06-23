@@ -59,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="nav.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="144" selection-start="477" selection-end="477" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="1207">
+            <state line="7" column="123" selection-start="456" selection-end="456" vertical-scroll-proportion="0.19349593" vertical-offset="0" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
@@ -86,7 +86,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customcss.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="customcss.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/customcss.css">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
@@ -171,9 +171,9 @@
         <option value="$PROJECT_DIR$/public/css/customcss.css" />
         <option value="$PROJECT_DIR$/app/filters.php" />
         <option value="$PROJECT_DIR$/app/views/master.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/layouts/nav.blade.php" />
         <option value="$PROJECT_DIR$/app/lang/ar/nav.php" />
         <option value="$PROJECT_DIR$/app/lang/en/nav.php" />
+        <option value="$PROJECT_DIR$/app/views/layouts/nav.blade.php" />
       </list>
     </option>
   </component>
@@ -747,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="144" selection-start="477" selection-end="477" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="1207">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/lang/ar/nav.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="425">
@@ -771,6 +764,13 @@
     <entry file="file://$PROJECT_DIR$/public/css/customcss.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="123" selection-start="456" selection-end="456" vertical-scroll-proportion="0.19349593" vertical-offset="0" max-vertical-offset="1207">
           <folding />
         </state>
       </provider>
