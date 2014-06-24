@@ -32,7 +32,7 @@
                 </ul>
             </li>
         </ul>
-        <form class="navbar-form navbar-left" action="{{ route('LanguageController@chooser') }}" method="post">
+        <form class="navbar-form navbar-left" action="{{ action('LanguageController@chooser') }}" method="post">
 <!--            <input class="form-control col-lg-8" placeholder="Search" type="text">-->
             <div class="form-group">
                 <select name="locale">
