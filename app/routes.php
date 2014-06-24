@@ -60,7 +60,7 @@ Route::group(
         ));
 
         // LanguageController
-        Route::post('lang', array(
+        Route::post('/lang', array(
             'as' => 'lang-chooser',
             'uses' => 'LanguageController@chooser'
         ));

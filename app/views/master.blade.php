@@ -37,6 +37,7 @@
 </head>
 <body>
     <div class="container">
+        <h1> {{ Session::get('locale')}}</h1>
         @include('layouts.nav')
         @if(Session::has('message'))
         <div class="alert alert-success">
