@@ -35,7 +35,7 @@
       <file leaf-file-name="master.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="12" selection-start="1378" selection-end="1401" vertical-scroll-proportion="0.7579618" vertical-offset="204" max-vertical-offset="935">
+            <state line="40" column="13" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.7579618" vertical-offset="204" max-vertical-offset="952">
               <folding />
             </state>
           </provider>
@@ -675,7 +675,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="12" selection-start="1378" selection-end="1401" vertical-scroll-proportion="0.7579618" vertical-offset="204" max-vertical-offset="935">
+        <state line="40" column="13" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.7579618" vertical-offset="204" max-vertical-offset="952">
           <folding />
         </state>
       </provider>
