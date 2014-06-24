@@ -9,7 +9,6 @@
 class LanguageController extends BaseController {
 
     public function chooser () {
-        dd('language chooser');
         $input = Input::get('locale');
         Session::set('locale', $input);
         return Redirect::back();
