@@ -30,7 +30,7 @@
                     <li><a href="#">Separated link</a></li>
                     <li><a href="#">One more separated link</a></li>
                 </ul>
-            </li>
+            </li>s
         </ul>
         <form class="navbar-form navbar-left" action="{{ action('LanguageController@chooser') }}" method="post">
 <!--            <input class="form-control col-lg-8" placeholder="Search" type="text">-->
