@@ -47,18 +47,23 @@ Route::group(
     Route::group(array('before'=> 'csrf'), function() {
 
 
-    // Account Create ==== Registeration Form
-    Route::post('account/register',array(
-        'as'=>'account-register',
-        'uses'=> 'AccountController@postRegister'
-    ));
+        // Account Create ==== Registeration Form
+        Route::post('account/register',array(
+            'as'=>'account-register',
+            'uses'=> 'AccountController@postRegister'
+        ));
 
-    // Account login ==== Login Form
-    Route::post('account/login', array(
-        'as' => 'account-login',
-        'uses' => 'AccountController@postLogin'
-    ));
+        // Account login ==== Login Form
+        Route::post('account/login', array(
+            'as' => 'account-login',
+            'uses' => 'AccountController@postLogin'
+        ));
 
+        // LanguageController
+        Route::post('/lang', array(
+            'as' => 'lang-chooser',
+            'uses' => 'LanguageController@chooser'
+        ));
 
     });
 
