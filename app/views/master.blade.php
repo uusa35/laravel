@@ -8,11 +8,11 @@
     <style type="text/css">
         @font-face {
             font-family:"jarida";
-            src: url("css/fonts/jarida.eot");
+            src: url("fonts/jarida.eot");
         }
         @font-face {
             font-family:"jarida";
-            src: url("css/fonts/jarida.ttf");
+            src: url("fonts/jarida.ttf");
         }
 
 
@@ -37,8 +37,10 @@
 </head>
 <body>
     <div class="container">
-        <h1> {{ Session::get('locale')}}</h1>
-        </br>
+<!--        <h1> {{ Session::get('locale')}}</h1>-->
+<!--        <hr/>-->
+<!--        <h1> {{ App::environment() }}</h1>-->
+<!--        <hr/>-->
         @include('layouts.nav')
         @if(Session::has('message'))
         <div class="alert alert-success">

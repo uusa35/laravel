@@ -15,7 +15,9 @@ class ArticlesTableSeeder extends Seeder {
 			Article::create([
                 'title'=> $faker->sentence(1),
                 'body'=> $faker->paragraph(5),
-                'category_id'=>$faker->randomDigit(1,5),
+                'author'=> $faker->name(),
+                'user_id' => $faker->numberBetween(1,6),
+                'category_id'=>$faker->numberBetween(1,5),
                 'created_at'=> $faker->dateTimeBetween('-1 day','+1 day'),
                 'updated_at'=> $faker->dateTimeBetween('-1 day','+1 day'),
 			]);

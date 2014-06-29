@@ -1,9 +1,8 @@
-@extends('admin.master')
+@extends('master')
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        {{ link_to_route('admin.articles.create', 'Create' ,'', ['class'=>'btn btn-primary']) }}
-        <hr>
+
         @if($articles->count())
         <div class="panel panel-default">
             <!-- Default panel contents -->
@@ -13,8 +12,7 @@
                     <thead>
                     <th>title</th>
                     <th>author</th>
-                    <th></th>
-                    <th></th>
+
 
 
                     </thead>
@@ -23,12 +21,8 @@
                     @foreach ($articles as $article)
                     <tr>
                         <td>{{ $article->id }}</td>
-                        <td>{{ link_to_route('admin.articles.show', $article->title , $article->id) }}</td>
-                        <td>{{ link_to_route('admin.articles.edit', 'Edit', [$article->id], ['class' =>'btn btn-primary']) }}</td>
-                        <td>{{  Form::open(['route'=> 'admin.articles.destroy', $article->id], ['method'=>'POST']) }}
-                            {{ Form::submit('Delete', array('class'=>'btn btn-danger')) }}
-                            {{ Form::close() }}
-                        </td>
+                        <td>{{ link_to_route('articles.show', $article->title , $article->id) }}</td>
+
                     </tr>
                     @endforeach
                     </tbody>

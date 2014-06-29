@@ -10,12 +10,13 @@
     <div class="navbar-collapse collapse navbar-responsive-collapse">
 
         <ul class="nav navbar-nav">
-            @if(Auth::check())
+
             <li><a href="#"><i class="icon-home icon-white"></i> Products </a></li>
             <li><a href="{{ URL::to('aboutus') }}"><i class="icon-home icon-white"></i> about us </a></li>
             <li><a href="{{ URL::to('contactus') }}"><i class="icon-home icon-white"></i> contact us </a></li>
-            @else
+            <li><a href="{{ action('ArticleController@index') }}"><i class="icon-home icon-white"></i> Articles </a></li>
             <li><a href="#"><i class="icon-home icon-white"></i> Products </a></li>
+            @if(! Auth::check())
             <li><a href="{{ URL::route('account-register') }}"><i class="icon-home icon-white"></i> Register</a></li>
             <li ><a href="{{ URL::route('account-login') }}"><i class="icon-file icon-white"></i> Login </a></li>
             @endif
@@ -30,17 +31,16 @@
                     <li><a href="#">Separated link</a></li>
                     <li><a href="#">One more separated link</a></li>
                 </ul>
-            </li>s
+            </li>
         </ul>
         <form class="navbar-form navbar-left" action="{{ action('LanguageController@chooser') }}" method="post">
 <!--            <input class="form-control col-lg-8" placeholder="Search" type="text">-->
-            <div class="form-group">
-                <select name="locale">
-                    <option value="en">English</option>
-                    <option value="ar">Arabic</option>
+                <select class="form-control" name="locale">
+                    <option value="en" {{ (Session::get('locale') == 'en') ? 'selected' : '' }} >English</option>
+                    <option value="ar" {{ (Session::get('locale') == 'ar') ? 'selected' : '' }} >Arabic</option>
                 </select>
-            </div>
-            <input type="submit"/>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         @if(Auth::check())
         <ul class="nav navbar-nav navbar-right">

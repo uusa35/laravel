@@ -7,6 +7,21 @@ Route::get('aboutus','HomeController@aboutus');
 
 /*
 |--------------------------------------------------------------------------
+| All-Users Areaa
+|--------------------------------------------------------------------------
+|*/
+
+    // LanguageController
+    Route::post('/lang', array(
+        'as' => 'lang-chooser',
+        'uses' => 'LanguageController@chooser')
+    );
+
+
+
+
+/*
+|--------------------------------------------------------------------------
 | Guest Area
 |--------------------------------------------------------------------------
 |*/
@@ -36,6 +51,11 @@ Route::group(
         'uses' => 'AccountController@getLogin'
     ));
 
+    // Articles system
+   Route::resource('articles','ArticleController', array('only'=> array('index', 'show')));
+
+});
+
 
     /*
 	|--------------------------------------------------------------------------
@@ -44,7 +64,7 @@ Route::group(
 	|*/
 
 
-    Route::group(array('before'=> 'csrf'), function() {
+Route::group(array('before'=> 'csrf'), function() {
 
 
         // Account Create ==== Registeration Form
@@ -59,15 +79,9 @@ Route::group(
             'uses' => 'AccountController@postLogin'
         ));
 
-        // LanguageController
-        Route::post('/lang', array(
-            'as' => 'lang-chooser',
-            'uses' => 'LanguageController@chooser'
-        ));
 
     });
 
-});
 
 
 /*
@@ -96,7 +110,7 @@ Route::group(array('before'=>'admin'),function () {
     Route::group(array('prefix'=>'admin'), function () {
         Route::controller('categories', 'CategoryController');
         Route::controller('products', 'ProductController');
-        Route::resource('articles', 'ArticleController');
+        Route::resource('articles', 'AdminArticleController');
         Route::get('/', 'HomeController@admin');
     });
 });

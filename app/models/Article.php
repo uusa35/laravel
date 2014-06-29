@@ -10,10 +10,12 @@ class Article extends Eloquent {
 
     protected $table = 'articles';
 
+    protected $fillable = ['title', 'body', 'author'];
+
     public static $rules = [
         'title'=>'required|min:3',
         'body'=>'required|min:3',
-        'category_id' => 'required'
+
     ];
 
     public function category () {
