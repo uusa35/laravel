@@ -36,7 +36,7 @@
 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ URL::to('admin/products') }}"><i class="icon-wrench"></i> Admin Panel</a></li>
+                    <li><a href="{{ URL::to('admin') }}"><i class="icon-wrench"></i> Admin Panel</a></li>
                     <li><a href="{{ URL::to('/') }}"><i class="icon-wrench"></i> Dashboard </a></li>
                     <li><a href="#"><i class="icon-wrench"></i> Profile</a></li>
                     <li class="divider"></li>

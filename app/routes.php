@@ -16,7 +16,9 @@ Route::get('aboutus','HomeController@aboutus');
         'as' => 'lang-chooser',
         'uses' => 'LanguageController@chooser')
     );
-
+    // Articles system
+    Route::resource('articles','ArticleController', array('only'=> array('index', 'show')));
+    
 
 
 
@@ -50,9 +52,6 @@ Route::group(
         'as' => 'account-login',
         'uses' => 'AccountController@getLogin'
     ));
-
-    // Articles system
-   Route::resource('articles','ArticleController', array('only'=> array('index', 'show')));
 
 });
 
