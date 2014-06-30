@@ -42,14 +42,13 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
-
         @if(Auth::check())
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
             <li class="dropdown open">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    @if(Auth::user()->admin ===1)
+                    @if(Auth::user()->admin)
                     <li><a href="{{ URL::to('/admin') }}"><i class="icon-wrench"></i> Admin Panel </a></li>
                     @endif
                     <li><a href="{{ URL::to('/') }}"><i class="icon-wrench"></i> Dashboard </a></li>

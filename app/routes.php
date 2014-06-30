@@ -1,5 +1,7 @@
 <?php
 
+
+
 Route::get('/','HomeController@index');
 Route::get('contactus','HomeController@contactus');
 Route::get('aboutus','HomeController@aboutus');
@@ -113,4 +115,44 @@ Route::group(array('before'=>'admin'),function () {
         Route::resource('articles', 'AdminArticleController');
         Route::get('/', 'HomeController@admin');
     });
+});
+
+//class Car {
+//    protected $tire;
+//    protected $glass;
+//    public function __construct(Tire $tire, Glass $glass) {
+//        $this->tire = $tire->tire16();
+//        $this->glass = $glass->brightglass();
+//    }
+//}
+//
+//class Tire  {
+//    public function tire16 (){
+//        return 'this is tire 16';
+//    }
+//}
+//
+//class Glass {
+//    public function brightglass() {
+//        return 'this is a very bright glass';
+//    }
+//}
+//
+//
+//Route::get('/', function () {
+//   var_dump(App::make('Car'));
+//});
+
+Route::get('/', function()
+{
+    // app/lib/myproject
+    $test1 = new MyProject\package1\Class1();
+    $test1->fun1();
+    $test2 = new MyProject\package2\Class2();
+    $test2->fun2();
+    print_r($test1->fun1());
+    echo '</br>';
+    print_r($test2->fun1());
+
+
 });
