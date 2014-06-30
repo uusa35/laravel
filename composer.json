@@ -9,8 +9,6 @@
         "php-ffmpeg/php-ffmpeg": "~0.4",
         "intervention/image": "1.5.1",
         "intervention/imagecache": "*"
-
-
 	},
     "require-dev": {
         "way/generators": "2.*",

@@ -23,8 +23,16 @@
     @else
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <style type="text/css">
+        @font-face {
+            font-family:"jarida";
+            src: url("fonts/jarida.eot");
+        }
+        @font-face {
+            font-family:"jarida";
+            src: url("fonts/jarida.ttf");
+        }
         html,body,h1,h2,h3,h4,a,div,span {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Oswald', 'jarida' ;
         }
     </style>
     @endif

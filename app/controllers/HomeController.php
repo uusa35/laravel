@@ -33,4 +33,8 @@ class HomeController extends BaseController {
         return View::make('layouts.aboutus');
     }
 
+    public function products () {
+        return View::make('layouts.products');
+    }
+
 }

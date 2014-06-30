@@ -3,6 +3,7 @@
 Route::get('/','HomeController@index');
 Route::get('contactus','HomeController@contactus');
 Route::get('aboutus','HomeController@aboutus');
+Route::get('products', 'HomeController@products');
 
 
 /*
@@ -18,7 +19,7 @@ Route::get('aboutus','HomeController@aboutus');
     );
     // Articles system
     Route::resource('articles','ArticleController', array('only'=> array('index', 'show')));
-    
+
 
 
 

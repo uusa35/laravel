@@ -78,11 +78,13 @@ class AccountController extends BaseController {
         if($validate->passes()) {
             Input::get('rememberme') === '1' ? 'true' : 'false';
             $user = Auth::attempt($credentials, Input::get('rememberme'));
+            if($user) {
             return Redirect::to('/')->with('message', 'you have logged successfully');
+            }
         }
-        else {
+
             return Redirect::to('/')->with('message', 'Login is not successful .. please check your email or password');
-        }
+
     }
 
 

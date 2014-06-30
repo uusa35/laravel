@@ -11,17 +11,16 @@
 
         <ul class="nav navbar-nav">
 
-            <li><a href="#"><i class="icon-home icon-white"></i> Products </a></li>
+            <li><a href="{{ URL::to('products') }}"><i class="icon-home icon-white"></i> Products </a></li>
             <li><a href="{{ URL::to('aboutus') }}"><i class="icon-home icon-white"></i> about us </a></li>
             <li><a href="{{ URL::to('contactus') }}"><i class="icon-home icon-white"></i> contact us </a></li>
             <li><a href="{{ action('ArticleController@index') }}"><i class="icon-home icon-white"></i> Articles </a></li>
-            <li><a href="#"><i class="icon-home icon-white"></i> Products </a></li>
             @if(! Auth::check())
             <li><a href="{{ URL::route('account-register') }}"><i class="icon-home icon-white"></i> Register</a></li>
             <li ><a href="{{ URL::route('account-login') }}"><i class="icon-file icon-white"></i> Login </a></li>
             @endif
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Link 5 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">English</a></li>
                     <li><a href="#">Arabic</a></li>
@@ -42,6 +41,8 @@
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
+
         @if(Auth::check())
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
