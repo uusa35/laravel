@@ -17,7 +17,7 @@ class ApiArticleController extends BaseController {
 	{
 		//
 		$articles = $this->article->all();
-		return Request::json(['data'=>$articles->toArray()],404);
+		return Response::json(['data'=>$articles->toArray()],200);
 	}
 
 	/**
@@ -54,7 +54,7 @@ class ApiArticleController extends BaseController {
 		//
 		$article = $this->article->find($id);
 		if($article) {
-			return Response::json(['data'=> $article->toArray],200);
+			return Response::json(['data'=> $article->toArray()],200);
 		}
 		return Response::json(['error'=> ['message'=>'this id is not found !!!','code'=>'E-1']],404);
 	}
