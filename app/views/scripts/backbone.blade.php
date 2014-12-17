@@ -2,6 +2,31 @@
     @parent
     {{ HTML::script("//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js") }}
     {{ HTML::script("//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js") }}
+    <script type="text/template" id="articles-template">
+        <h4>All Articles</h4>
+        <table class="table striped">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>author</th>
+                <th>title</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+            </tr>
+            <tbody>
+                <% _.each(articles, function (article) { %>
+                    <tr>
+                        <td><%= article.get('id') %></td>
+                        <td><%= article.get('author') %></td>
+                        <td><%= article.get('title') %></td>
+                        <td><%= article.get('created_at') %></td>
+                        <td><%= article.get('updated_at') %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+            </thead>
+        </table>
+    </script>
     <script>
         /*Routes*/
         var Router = Backbone.Router.extend({
@@ -19,8 +44,9 @@
                 var articles = new ArticlesCollection();
                 articles.fetch({
                     'error' :   function () {alert('error')},
-                    'succes' :  function () {
-                                that.$el.html('cool its workin from the backbone Page :) ');
+                    'succes' :  function (articles) {
+                                var template = _.template($().html(),{articles: articles.models});
+                                that.$el.html(template);
                                 }
                 });
 
