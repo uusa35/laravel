@@ -54,7 +54,7 @@
                     'error' :   function () {alert('error')},
                     'succes' :  function (articles) {
                                 var template = _.template($('#articles-template').html(),{articles: articles.models});
-                                that.$el.html(template);
+                                that.('.page').html(template);
                                 }
                 });
 
