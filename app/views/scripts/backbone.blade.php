@@ -46,7 +46,6 @@
         var router = new Router();
         /*Views*/
         var ArticlesListView = Backbone.View.extend({
-            el      :'.page',
             render  : function () {
                 var that = this;
                 var articles = new ArticlesCollection();
@@ -54,7 +53,7 @@
                     'error' :   function () {alert('error')},
                     'succes' :  function (articles) {
                                 var template = _.template($('#articles-template').html(),{articles: articles.models});
-                                that.('.page').html(template);
+                                that.$('.page').html(template);
                                 }
                 });
 
