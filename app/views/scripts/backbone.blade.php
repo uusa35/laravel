@@ -30,11 +30,11 @@
     <script>
         /*URL Prefix*/
         $.ajaxPrefilter(function (options,originalOptions, jqXHR) {
-            options.url = 'http://projects-usama-ahmed.tk/api' + options.url;
+            options.url = 'http://projects-usama-ahmed.tk/' + options.url;
         });
         /*Collection*/
         var ArticlesCollection = Backbone.Collection.extend({
-            'url'   : '/articles'
+            'url'   : 'api/articles'
         });
         /*Routes*/
         var Router = Backbone.Router.extend({
