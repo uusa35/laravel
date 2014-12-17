@@ -30,16 +30,16 @@
     <script>
         /*URL Prefix*/
         $.ajaxPrefilter(function (options,originalOptions, jqXHR) {
-            options.url = 'http://projects-usama-ahmed.tk/' + options.url;
+            options.url = 'http://projects-usama-ahmed.tk' + options.url;
         });
         /*Collection*/
         var ArticlesCollection = Backbone.Collection.extend({
-            'url'   : 'api/articles'
+            'url'   : '/api/articles'
         });
         /*Routes*/
         var Router = Backbone.Router.extend({
             routes: {
-                ''          : 'home'
+                'http://projects-usama-ahmed.tk/backbone/main'          : 'home'
             }
         });
         var router = new Router();
