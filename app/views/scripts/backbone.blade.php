@@ -18,8 +18,10 @@
                 var that = this;
                 var articles = new ArticlesCollection();
                 articles.fetch({
+                    'error' : function () {alert('error')},
                     'succes' : function () {
-                                that.$el.html('cool its workin from the backbone Page :) ');
+                                alert('anythin');
+                                this.$el.html('cool its workin from the backbone Page :) ');
                                 }
                 });
 
@@ -28,6 +30,7 @@
         /*URL Prefix*/
         $.ajaxPrefilter(function (options,originalOptions, jqXHR) {
             options.url = 'http://projects-usama-ahmed.tk/api' + options.url;
+            alert(options.url);
         });
         /*Collection*/
         var ArticlesCollection = Backbone.Collection.extend({
