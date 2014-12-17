@@ -8,7 +8,3 @@
 
         </div>
     @stop
-
-    @section('scripts')
-        @include('scripts.backbone')
-    @stop
