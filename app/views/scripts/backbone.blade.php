@@ -28,6 +28,14 @@
         </table>
     </script>
     <script>
+        /*URL Prefix*/
+        $.ajaxPrefilter(function (options,originalOptions, jqXHR) {
+            options.url = 'http://projects-usama-ahmed.tk/api' + options.url;
+        });
+        /*Collection*/
+        var ArticlesCollection = Backbone.Collection.extend({
+            'url'   : '/articles'
+        });
         /*Routes*/
         var Router = Backbone.Router.extend({
             routes: {
@@ -45,21 +53,12 @@
                 articles.fetch({
                     'error' :   function () {alert('error')},
                     'succes' :  function (articles) {
-                                var template = _.template($().html(),{articles: articles.models});
+                                var template = _.template($('#articles-template').html(),{articles: articles.models});
                                 that.$el.html(template);
                                 }
                 });
 
             }
-        });
-        /*URL Prefix*/
-        $.ajaxPrefilter(function (options,originalOptions, jqXHR) {
-            options.url = 'http://projects-usama-ahmed.tk/api' + options.url;
-            alert(options.url);
-        });
-        /*Collection*/
-        var ArticlesCollection = Backbone.Collection.extend({
-            'url'   : '/articles'
         });
         var ArticleListViewInstance = new ArticlesListView();
         router.on('route:home', function () {
