@@ -18,10 +18,9 @@
                 var that = this;
                 var articles = new ArticlesCollection();
                 articles.fetch({
-                    'error' : function () {alert('error')},
-                    'succes' : function () {
-                                alert('anythin');
-                                this.$el.html('cool its workin from the backbone Page :) ');
+                    'error' :   function () {alert('error')},
+                    'succes' :  function () {
+                                that.$el.html('cool its workin from the backbone Page :) ');
                                 }
                 });
 
