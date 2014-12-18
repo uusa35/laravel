@@ -92,6 +92,7 @@
                 articles.fetch({
                     'error' :   function () {alert('error')},
                     'success' :  function (articles) {
+                        alert('working from inside the success function');
                         var template = _.template($('#articles-template').html(),{articles: articles.models});
                         that.$('.page').html(template);
                     }
