@@ -91,7 +91,7 @@
                 var articles = new ArticlesCollection();
                 articles.fetch({
                     'error' :   function () {alert('error')},
-                    'succes' :  function (articles) {
+                    'success' :  function (articles) {
                         var template = _.template($('#articles-template').html(),{articles: articles.models});
                         that.$('.page').html(template);
                     }
