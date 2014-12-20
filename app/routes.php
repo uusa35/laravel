@@ -10,7 +10,7 @@ Route::group(['prefix'=> 'api'],function () {
 
 Route::group(['prefix'=>'backbone'], function() {
 
-    Route::get('main',['as'=>'main','uses'=>'BackboneController@index']);
+    Route::get('main',['as'=>'backbone-main','uses'=>'BackboneController@index']);
 
 });
 

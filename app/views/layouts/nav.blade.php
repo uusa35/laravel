@@ -18,6 +18,7 @@
             @if(! Auth::check())
             <li><a href="{{ URL::route('account-register') }}"><i class="icon-home icon-white"></i> Register</a></li>
             <li ><a href="{{ URL::route('account-login') }}"><i class="icon-file icon-white"></i> Login </a></li>
+            <li ><a href="{{ URL::route('backbone-main') }}"><i class="icon-file icon-white"></i> Backbone </a></li>
             @endif
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Link 5 <b class="caret"></b></a>

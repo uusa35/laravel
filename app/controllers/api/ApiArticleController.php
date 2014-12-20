@@ -29,6 +29,7 @@ class ApiArticleController extends BaseController {
 	public function create()
 	{
 		//
+		//return Response::json(['status'=>'success',200]);
 	}
 
 	/**
@@ -40,6 +41,20 @@ class ApiArticleController extends BaseController {
 	public function store()
 	{
 		//
+		$author = Input::get('data.author');
+		$title = Input::get('data.title');
+		$body = Input::get('data.body');
+		$category_id = Input::get('data.category');
+		$article = $this->article->create([
+			'author'		=> $author,
+			'title'			=> $title,
+			'body'			=> $body,
+			'category_id'	=> $category_id,
+		]);
+		if($article) {
+			return Response::json(['code'=>'Success01'],200);
+		}
+		return Response::json(['code'=>'Error01'],404);
 	}
 
 	/**
