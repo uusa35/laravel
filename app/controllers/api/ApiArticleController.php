@@ -41,20 +41,23 @@ class ApiArticleController extends BaseController {
 	public function store()
 	{
 		//
-		$author = Input::get('data.author');
-		$title = Input::get('data.title');
-		$body = Input::get('data.body');
-		$category_id = Input::get('data.category');
-		$article = $this->article->create([
-			'author'		=> $author,
-			'title'			=> $title,
-			'body'			=> $body,
-			'category_id'	=> $category_id,
-		]);
-		if($article) {
-			return Response::json(['code'=>'Success01'],200);
-		}
-		return Response::json(['code'=>'Error01'],404);
+
+
+			$author = Input::get('data.author');
+			$title = Input::get('data.title');
+			$body = Input::get('data.body');
+			$category_id = Input::get('data.category');
+			$article = $this->article->create([
+				'author' => $author,
+				'title' => $title,
+				'body' => $body,
+				'category_id' => $category_id,
+			]);
+			if ($article) {
+				return Response::json(['code' => 'Success01'], 200);
+			}
+			return Response::json(['code' => 'Error01'], 404);
+
 	}
 
 	/**
@@ -96,6 +99,24 @@ class ApiArticleController extends BaseController {
 	public function update($id)
 	{
 		//
+		$author = Input::get('data.author');
+		$title = Input::get('data.title');
+		$body = Input::get('data.body');
+		$category_id = Input::get('data.category');
+		$article = $this->article->find($id);
+		if($article) {
+			$article = $this->article->where('id','=',Input::get('data.id'))->update([
+				'author'		=> $author,
+				'title'			=> $title,
+				'body'			=> $body,
+				'category_id'	=> $category_id,
+			]);
+			if($article) {
+				return Response::json(['code'=>'Success02-update'],200);
+			}
+			return Response::json(['code'=>'Error02-update'],404);
+		}
+		return Response::json(['error'=> ['message'=>'this id is not found !!!','code'=>'E-2']],404);
 	}
 
 	/**
