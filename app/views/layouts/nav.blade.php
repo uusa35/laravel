@@ -12,7 +12,7 @@
         <ul class="nav navbar-nav">
 
             <li><a href="{{ URL::to('products') }}"><i class="icon-home icon-white"></i> Products </a></li>
-            <li><a href="{{ URL::to('aboutus') }}"><i class="icon-home icon-white"></i> about us </a></li>
+            <li><a href="{{ URL::route('backbone-tutorial') }}"><i class="icon-home icon-white"></i> Backbone tutorial</a></li>
             <li><a href="{{ URL::to('contactus') }}"><i class="icon-home icon-white"></i> contact us </a></li>
             <li><a href="{{ action('ArticleController@index') }}"><i class="icon-home icon-white"></i> Articles </a></li>
             @if(! Auth::check())

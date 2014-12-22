@@ -15,6 +15,12 @@ Route::group(['prefix'=>'backbone'], function() {
 });
 
 
+Route::group(['prefix'=>'jeffery'], function () {
+    Route::get('backbonetutorial', ['as' => 'backbone-tutorial', 'uses' => 'BackboneTutorialController@index']);
+    }
+);
+
+
 Route::get('/','HomeController@index');
 Route::get('contactus','HomeController@contactus');
 Route::get('aboutus','HomeController@aboutus');
