@@ -11,7 +11,7 @@ class BackboneTutorialController extends BaseController {
 	public function index()
 	{
 		//
-		return View::make('backbone_tutorial');
+		return View::make('backbonetutorial');
 	}
 
 	/**
