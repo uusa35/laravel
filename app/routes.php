@@ -1,6 +1,7 @@
 
 <?php
 
+// responsible for the API arrays 
 Route::group(['prefix'=> 'api'],function () {
 
     Route::resource('articles','ApiArticleController');
@@ -8,6 +9,7 @@ Route::group(['prefix'=> 'api'],function () {
 });
 
 
+// responsible for the Backbone Application 
 Route::group(['prefix'=>'backbone'], function() {
 
     Route::get('main',['as'=>'backbone-main','uses'=>'BackboneController@index']);

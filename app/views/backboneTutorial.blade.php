@@ -4,7 +4,10 @@
 @section('content')
     <div class="page">
 
-        this is the main page for backbone tutorial
+        <a href="#whatever" class="test btn btn-success">
+            <i class="fa fa-camera-retro fa-lg"></i>
+            Save Record :)
+        </a>
 
     </div>
 @stop

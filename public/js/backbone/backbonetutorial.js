@@ -10,6 +10,7 @@ Person.prototype.work = function () {
 }  */
 
 
+/*
 var Person = Backbone.Model.extend({
     defaults : {
         'name'      : 'usama',
@@ -79,10 +80,69 @@ var peopleCollection = new PeopleCollection([
 // instance of PeopleView
 var peopleView = new PeopleView({ collection : peopleCollection});
 
+*/
 /*var person = new Person();
 var personView = new PersonView({ model : person});
 var person2 = new Person({name: 'mahmood',age:28,job:'secretary'});
-var personView2 = new PersonView({ model : person2});*/
+var personView2 = new PersonView({ model : person2});*//*
 
 
-//console.log(peopleCollection.toJSON());
+
+//console.log(peopleCollection.toJSON());*/
+
+
+(function () {
+    window.App = {
+        Models      : {},
+        Collections : {},
+        Views       : {},
+        Router      : {},
+        Events      : {}
+    };
+
+    App.Models.Article = Backbone.Model.extend({
+        defaults : {
+            title         : '',
+            author        : '',
+            body          : '',
+            category_id   : '',
+            created_at    : '',
+            updated_at    : ''
+        },
+        urlRoot : '/api/articles'
+    });
+
+    App.Collections.Articles = Backbone.Model.extend({
+        model   : App.Models.Article,
+        url     : '/api/articles'
+    });
+
+
+
+
+    // instance
+    var article = new App.Models.Article({id : 5});
+    article.fetch({
+        success   : function () {
+            console.log('success from the article Model Method');
+        }
+    });
+    var articles = new App.Collections.Articles();
+    var TestArticles = articles.fetch({
+        success   : function () {
+
+        }
+    });
+
+    $('.test').on('click', function (TestArticle) {
+        console.log('Click Event Fired');
+        var title = prompt('Please Put a Value for the title');
+        article.set('title',title);
+        article.save({
+            success     : function (msg) {
+                console.log(msg);
+            }
+        });
+    });
+
+})();

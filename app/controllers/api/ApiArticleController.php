@@ -17,7 +17,7 @@ class ApiArticleController extends BaseController {
 	{
 		//
 		$articles = $this->article->all();
-		return Response::json(['data'=>$articles->toArray()],200);
+		return Response::json($articles,200);
 	}
 
 	/**
@@ -72,7 +72,7 @@ class ApiArticleController extends BaseController {
 		//
 		$article = $this->article->find($id);
 		if($article) {
-			return Response::json(['data'=> $article->toArray()],200);
+			return Response::json($article,200);
 		}
 		return Response::json(['error'=> ['message'=>'this id is not found !!!','code'=>'E-1']],404);
 	}
@@ -99,13 +99,13 @@ class ApiArticleController extends BaseController {
 	public function update($id)
 	{
 		//
-		$author = Input::get('data.author');
-		$title = Input::get('data.title');
-		$body = Input::get('data.body');
-		$category_id = Input::get('data.category');
+		$author = Input::json('author');
+		$title = Input::json('title');
+		$body = Input::json('body');
+		$category_id = Input::json('category_id');
 		$article = $this->article->find($id);
 		if($article) {
-			$article = $this->article->where('id','=',Input::get('data.id'))->update([
+			$article->update([
 				'author'		=> $author,
 				'title'			=> $title,
 				'body'			=> $body,
