@@ -13,18 +13,18 @@
         </tr>
         <tbody>
         <% articles.each(function(article) { %>
-        <% for (i=0;i< article.attributes.data.length;i++) {%>
+
         <tr>
-            <td><%= article.attributes.data[i].id %></td>
-            <td><%= article.attributes.data[i].author %></td>
-            <td><a href="/articles/<%= article.attributes.data[i].id %>"><%= article.attributes.data[i].title %></a>
+            <td><%= article.get('id') %></td>
+            <td><%= article.get('author') %></td>
+            <td><a href="/articles/<%= article.get('id') %>"><%= article.get('title') %></a>
             </td>
-            <td><%= article.attributes.data[i].created_at %></td>
-            <td><%= article.attributes.data[i].updated_at %></td>
-            <td><a href="#/edit/<%= article.attributes.data[i].id %>" class="btn btn-warning" role="button">edit</a>
+            <td><%= article.get('created_at') %></td>
+            <td><%= article.get('updated_at') %></td>
+            <td><a href="#/edit/<%= article.get('id') %>" class="btn btn-warning" role="button">edit</a>
             </td>
         </tr>
-        <% } %>
+
         <% }); %>
         </tbody>
         </thead>
@@ -46,14 +46,14 @@
         </tr>
         <tbody>
         <% articles.each(function(article) { %>
-        <% for (i=0;i< article.attributes.data.length;i++) {%>
         <tr>
-            <td><%= article.attributes.data[i].id %></td>
-            <td><%= article.attributes.data[i].author %></td>
-            <td><a href="#/show/<%= article.attributes.data[i].id %>"><%= article.attributes.data[i].title %></a></td>
-            <td><%= article.attributes.data[i].created_at %></td>
-            <td><%= article.attributes.data[i].updated_at %></td>
-            <td><a href="#/edit/<%= article.attributes.data[i].id %>" class="btn btn-warning" role="button">edit</a>
+            <td><%= article.get('id') %></td>
+            <td><%= article.get('author') %></td>
+            <td><a href="/articles/<%= article.get('id') %>"><%= article.get('title') %></a>
+            </td>
+            <td><%= article.get('created_at') %></td>
+            <td><%= article.get('updated_at') %></td>
+            <td><a href="#/edit/<%= article.get('id') %>" class="btn btn-warning" role="button">edit</a>
             </td>
         </tr>
         <% } %>
@@ -65,27 +65,27 @@
 <script type="text/template" id="create-new-article-template">
     <legend><%= articleItem ? 'Update' : 'Create' %> Article</legend>
     <form action="#" role="form" class="<%= articleItem ? 'edit' : 'create' %>-article-form col-md-7">
-        <input type="hidden" name="id" value="<%= articleItem ? articleItem.attributes.data.id : '' %>"/>
+        <input type="hidden" name="id" value="<%= articleItem ? articleItem.get('id') : '' %>"/>
 
         <div class="form-group">
             <label for="author">Author</label>
             <input type="text" name="author" class="form-control"
-                   value="<%= articleItem ? articleItem.attributes.data.author : 'author' %>"/>
+                   value="<%= articleItem ? articleItem.get('author') : 'author' %>"/>
         </div>
         <div class="form-group">
             <label for="title">title</label>
             <input type="text" name="title" class="form-control"
-                   value="<%= articleItem ? articleItem.attributes.data.title : 'title' %>"/>
+                   value="<%= articleItem ? articleItem.get('title') : 'title' %>"/>
         </div>
         <div class="form-group">
             <label for="category_id">category</label>
             <input type="number" max="10" min="0" name="category_id" class="form-control"
-                   value="<%= articleItem ? articleItem.attributes.data.category_id : 'category' %>"/>
+                   value="<%= articleItem ? articleItem.get('category_id') : 'category' %>"/>
         </div>
         <div class="form-group">
             <label for="body">body</label>
             <textarea name="body" class="form-control"
-                      rows="5"><%= articleItem ? articleItem.attributes.data.body : 'Body' %></textarea>
+                      rows="5"><%= articleItem ? articleItem..get('data.body') : 'Body' %></textarea>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-info">Submit</button>
