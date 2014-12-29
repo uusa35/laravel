@@ -99,10 +99,10 @@ class ApiArticleController extends BaseController {
 	public function update($id)
 	{
 		//
-		$author = Input::json('author');
-		$title = Input::json('title');
-		$body = Input::json('body');
-		$category_id = Input::json('category_id');
+		$author = Input::json('data.author');
+		$title = Input::json('data.title');
+		$body = Input::json('data.body');
+		$category_id = Input::json('data.category_id');
 		$article = $this->article->find($id);
 		if($article) {
 			$article->update([
@@ -111,7 +111,7 @@ class ApiArticleController extends BaseController {
 				'body'			=> $body,
 				'category_id'	=> $category_id,
 			]);
-			if($article) {
+			if($article->save()) {
 				return Response::json(['code'=>'Success02-update'],200);
 			}
 			return Response::json(['code'=>'Error02-update'],404);

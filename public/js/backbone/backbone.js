@@ -71,21 +71,17 @@ var CreateNewArticleView = Backbone.View.extend({
         var that = this;
 
         if(options.id) {
-            console.debug('working with ID');
             articleItem = new ArticleModel({id:options.id});
             articleItem.fetch({
                 'error' :   function () {alert('error')},
                 'success' :  function (articleItem) {
-                    console.debug(articleItem);
                     var template = _.template($('#create-new-article-template').html(),{articleItem: articleItem});
                     that.$el.html(template);
-                    console.log(articleItem);
                 }
             });
         }
         else {
             articleItem = null;
-            console.log(articleItem);
             var template = _.template($('#create-new-article-template').html(),{articleItem: null});
             that.$el.html(template);
 

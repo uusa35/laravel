@@ -63,7 +63,7 @@
     </table>
 </script>
 <script type="text/template" id="create-new-article-template">
-    <legend><%= articleItem ? 'Update' : 'Create' %> Article</legend>
+    <legend><% articleItem ? 'Update' : 'Create' %> Article</legend>
     <form action="#" role="form" class="<%= articleItem ? 'edit' : 'create' %>-article-form col-md-7">
         <input type="hidden" name="id" value="<%= articleItem ? articleItem.get('id') : '' %>"/>
 
@@ -85,7 +85,7 @@
         <div class="form-group">
             <label for="body">body</label>
             <textarea name="body" class="form-control"
-                      rows="5"><%= articleItem ? articleItem..get('data.body') : 'Body' %></textarea>
+                      rows="5"><%= articleItem ? articleItem.get('data.body') : 'Body' %></textarea>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-info">Submit</button>
