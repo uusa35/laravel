@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://projects-usama-ahmed.tk/',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -188,8 +188,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-        'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-        'Image' => 'Intervention\Image\Facades\Image'
+        'Sentry' 		=> 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+        'Image' 		=> 'Intervention\Image\Facades\Image'
 
 	),
 

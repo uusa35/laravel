@@ -32,6 +32,7 @@
 {{--footer for backboneTutorial for jeffery ways--}}
 @section('backbonetutorial')
     @include('scripts.backbonetutorial')
+    {{ HTML::style('css/bootstrap.css') }}
     {{ HTML::script('js/backbone/backbonetutorial.js') }}
 @stop
 
