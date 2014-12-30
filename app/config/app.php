@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://projects-usama-ahmed.tk',
+	'url' => 'http://localhost',
 
 	/*
 	|--------------------------------------------------------------------------
